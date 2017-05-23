@@ -1,0 +1,73 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+        <div id="search-product-input">
+            <form>
+                <input type="text" name="search" id="search-input2" class="search-input" placeholder="Lampe basse conso">
+            </form>
+        </div>
+        <div id="result-product2"></div>
+        <h1 id="actualities-title">Actualités</h1>
+
+        <div id="bloc-article">
+            <article>
+                <img src="assets/img/actu-img.png" alt="koala">
+                <form action="?action=article" method="POST"><input type="hidden" value="1" name="id"><input type="submit" value="1000 bouteilles d'eau distribués"></form>
+            </article>
+            <article>
+                <img src="assets/img/actu-img2.png" alt="enfants">
+                <form action="?action=article" method="POST"><input type="hidden" value="2" name="id"><input type="submit" value="1000 bouteilles d'eau distribués"></form>
+            </article>
+        </div>
+
+        <div id="header-info">
+            <h1>Le comparateur<br>responsable</h1>
+
+            <form>
+                <input type="text" name="search" id="search-input" class="search-input" placeholder="Lampe basse conso">
+                <input type="submit" id="search" value="">
+            </form>
+            <h4>Exemple : Fer à lisser haute gamme, aspirateur sans bruit, table à repasser spéciale chemise...</h4>
+        </div>
+        
+        <div id="result-product"></div>
+        <div id="top-vente">
+            
+            <h2>TOP VENTES</h2>
+            <div id="top-vente-item">
+                <div class="item-product">
+                    <div class="square"><img src="assets/img/gopro.png" alt="gopro"></div>
+                    <h6>Hero 5 <span>35 &euro;</span></h6>
+                </div>
+
+                <div class="item-product">
+                    <div class="square"><img src="assets/img/fer.png" alt="fer"></div>
+                    <h6>Fer à repasser <span>15 &euro;</span></h6>
+                </div>
+
+                <div class="item-product">
+                    <div class="square"><img src="assets/img/aspirateur.png" alt="aspirateur"></div>
+                    <h6>Aspirateur <span>22 &euro;</span></h6>
+                </div>
+
+
+                <div class="item-product">
+                    <div class="square"><img src="assets/img/micro.png" alt="micro-onde"></div>
+                    <h6>Micro onde <span>48 &euro;</span></h6>
+                </div>
+            </div>
+
+        </div>
+        <div id="actu-desktop">
+            <h2>DERNIÈRES ACTUALITÉS</h2>
+            <div id="actu-bloc">
+                <img src="assets/img/actu-img.png" alt="actu-img" id="actu-img">
+                <div id="text">
+                    <h3>WWF :  Projet Fatana Mitsitsy</h3>
+                    <p>Depuis 2009, Earth Hour propose aux citoyens du monde entier d’éteindre leurs lumières de 20h30 à 21h30 chaque dernier samedi du mois de mars. De Singapour à Paris, tous les monuments emblématiques des grandes villes sont plongés dans le noir pendant une heure, heure durant laquelle leurs habitants se réunissent autour de concerts et de festivités pour signifier leur soutien à ce mouvement planétaire. 
+                    </p>
+                    <form action="?action=article" method="POST"><input type="hidden" value="1" name="id"><input type="submit" value="En savoir plus"></form>
+                </div>
+            </div>
+        </div>
+{% endblock %}

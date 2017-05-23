@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div id="sign-in-container">
+        <h1>CASHALLO</h1>
+        <form action="?action=register" method="POST">
+            <input type="text" name="prenom" class="log-input" placeholder="Prenom">
+            <input type="text" name="nom" class="log-input" placeholder="Nom">
+            <input type="email" name="email" class="log-input" placeholder="Addresse mail">
+            <input type="password" name="password" class="log-input" placeholder="Mot de passe">
+            <input type="submit" value="S'inscrire">
+        </form>
+        <a href="?action=login">SE CONNECTER</a>
+    </div>
+
+    <div id="header-register">
+        <form action="?action=login" method="POST">
+            <legend>CONNECTEZ-VOUS</legend>
+            <input type="email" name="email" class="log-input" placeholder="Addresse mail">
+            <input type="password" name="password" class="log-input" placeholder="Mot de passe">
+            <input type="submit" value="se connecter">
+        </form>
+    </div>
+
+    <div id="header-register-content">
+        <form action="?action=register" method="POST">
+            <legend>Inscrivez-vous</legend>
+            <div id="name-register">
+                <input type="text" name="nom" placeholder="Nom" id="nom">
+                <input type="text" name="prenom" placeholder="Prenom" id="prenom">
+            </div>
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Mot de passe">
+            <input type="submit" value="S'INSCRIRE">
+        </form>
+    </div>
+{% endblock %}

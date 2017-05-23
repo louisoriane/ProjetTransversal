@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div id="profil-bloc">
+        <img src="assets/img/username.png" alt="profil" id="profil-img">
+        <h1>{{ user.prenom }}</h1>
+
+        <div id="state-money">
+            <div class="state" style="border: 3px solid #1BD37A;">
+                <h1 style="color: #1BD37A;">ARGENT DEPENSE</h1>
+                <h1 style="background: #1BD37A;">{{ spent.0.spent }}</h1>
+            </div>
+
+            <div class="state" style="border: 3px solid #9AD94A;">
+                <h1 style="color: #9AD94A;">ARGENT ECONOMISE</h1>
+                <h1 style="background: #9AD94A;">{{ spent.0.spent*0.09}}</h1>
+            </div>
+
+            <div class="state" style="border: 3px solid #FFD83C;">
+                <h1 style="color: #FFD83C;">ARGENT REVERSE</h1>
+                <h1 style="background: #FFD83C;">{{ spent.0.spent*0.03}}</h1>
+            </div>
+        </div>
+        
+    </div>
+
+    <a href="?action=histo" id="histo-link"><h1>Historique</h1></a>
+        <div id="histo">
+            {% for histo in histos %}
+                <div class="histo-info">
+                    <p>{{ histo.itemname }}</p>
+                    <p>{{ histo.price }} &euro;</p>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}

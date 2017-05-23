@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div id="cause-list">
+        <h2>{{ product.name }}</h2>
+        <h2>Choisissez votre cause</h2>
+        
+        <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+            <div class="carousel-cell">
+                <h4>Recherche<br>scientifique</h4>
+                <form action="?action=buy" method="POST">
+                    <input type="hidden" name="itemname" value="{{ product.itemname }}">
+                    <input type="hidden" name="price" value="{{ product.price }}">
+                    <input type="hidden" name="seller" value="{{ product.seller }}">
+                    <input type="image" src="assets/img/cause1.png" value="scientifique" alt="cause1" id="cause-scientifique" name="cause">
+                </form>
+                <h1>CHOISIR</h1>
+            </div>
+            <div class="carousel-cell">
+                <h4>Protection<br>des animaux</h4>
+                <form action="?action=buy" method="POST">
+                    <input type="hidden" name="itemname" value="{{ product.itemname }}">
+                    <input type="hidden" name="price" value="{{ product.price }}">
+                    <input type="hidden" name="seller" value="{{ product.seller }}">
+                    <input type="image" src="assets/img/cause2.png" value="animaux" alt="cause1" id="cause-animaux" name="cause">
+                </form>
+                <h1 id="yellow">CHOISIR</h1>
+            </div>
+            <div class="carousel-cell">
+                <h4>Planter<br>un arbre</h4>
+                <form action="?action=buy" method="POST">
+                    <input type="hidden" name="itemname" value="{{ product.itemname }}">
+                    <input type="hidden" name="price" value="{{ product.price }}">
+                    <input type="hidden" name="seller" value="{{ product.seller }}">
+                    <input type="image" src="assets/img/cause3.png" value="arbre" alt="cause1" id="cause-arbre" name="cause">
+                </form>
+                <h1 id="green">CHOISIR</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}

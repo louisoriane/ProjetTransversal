@@ -1,0 +1,64 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div id="header-contact-mobil">
+        <div>
+            <h3>CASHALLO</h3>
+            <h4>Adresse : <span>40 rue Saint Honoré 75001 PARIS</span></h4>
+            <h4>Numéro : <span>01 22 33 44 55</span></h4>
+            <h4>Mail : <span>cashallo@gmail.com</span></h4>
+        </div>
+    </div>
+
+    <div id="header-content-mobil">
+        <form action="?action=mail" method="POST">
+            <legend>Contactez-nous</legend>
+            <input type="text" name="nom" placeholder="Nom">
+            <input type="text" name="prenom" placeholder="Prenom">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="telephone" placeholder="Téléphone">
+            <input type="text" name="question" placeholder="Question">
+            <input type="submit" value="Envoyer">
+        </form>
+
+        {# <div id="googleMap"></div> #}
+    </div>
+
+
+    <div id="header-contact">
+        <div id="contact-info">
+            <h3>CASHALLO</h3>
+            <h4>Adresse : <span>40 rue Saint Honoré 75001 PARIS</span></h4>
+            <h4>Numéro : <span>01 22 33 44 55</span></h4>
+            <h4>Mail : <span>cashallo@gmail.com</span></h4>
+        </div>
+    </div>
+    <div id="header-content">
+        <form action="?action=mail" method="POST">
+            <legend>Contactez-nous</legend>
+            <input type="text" name="nom" placeholder="Nom">
+            <input type="text" name="prenom" placeholder="Prenom">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="telephone" placeholder="Téléphone">
+            <input type="text" name="question" placeholder="Question">
+            <input type="submit" value="Envoyer">
+        </form>
+        <div id="googleMap"></div>
+        <script>
+        function myMap() {
+        var mapProp= {
+        center:new google.maps.LatLng(48.8611793,2.3448293999999805),
+        zoom:18,
+        styles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2e5d4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#c5dac6"}]},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#c5c6c6"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#e4d7c6"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#fbfaf7"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#acbcc9"}]}]
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var marker = new google.maps.Marker({
+        position: mapProp['center'],
+        animation: google.maps.Animation.BOUNCE
+        });
+        marker.setMap(map);
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOhEHuUjkzmMRxm5DZbMXybQKVfLzjBmA&callback=myMap"></script>
+        
+    </div>
+{% endblock %}

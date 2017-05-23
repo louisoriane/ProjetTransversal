@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div id="product-list">
+        <h2>Choisissez votre offre</h2>
+        <div class="product-info">
+            <span><a href="cause.html">{{ product.price }}</a></span>
+            <h4>{{ product.name }}</h4>
+            <h4>{{ product.seller }}</h4>
+            <img src="{{ product.img }}" alt="product" id="product">
+        </div>
+        <div id="check-symbol">
+            <form action="?action=cause" method="POST">
+                <input type="hidden" name="itemname" value="{{ product.name }}">
+                <input type="hidden" name="price" value="{{ product.price }}">
+                <input type="hidden" name="seller" value="{{ product.seller }}">
+                <input type="image" src="assets/img/check-icon.png" alt="check-icon" id="check-icon">
+            </form>
+        </div>
+    </div>
+{% endblock %}

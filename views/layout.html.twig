@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/flickity-docs/flickity.css">
+        <script src="assets/flickity-docs/flickity.pkgd.min.js"></script>
+    <script src="assets/js/product.js"></script>
+</head>
+<body style="height: 100%;">
+<script src="assets/js/script.js"></script>
+    <nav id="mobil-nav">
+            <div id="top-nav">
+                <a href="?action=profil">
+                    <img src="assets/img/username.png" alt="profil" id="profil">
+                    <h3>{{ user.prenom }}</h3>
+                </a>
+            </div>
+
+            <ul id="menu">
+                <li><a href="?action=home">Home</a></li>
+                <li><a href="?action=partner">Partenaires</a></li>
+                <li><a href="?action=actualities">Actualités</a></li>
+                <li><a href="?action=contact">Contact</a></li>
+                {% if user.email is not defined and user.email is empty %}
+                    <li><a href="?action=register">Inscription/login</a></li>
+                {% endif %}
+                {% if user.email is defined and user.email is not empty %}
+                    <li><a href="?action=logout">Deconnection</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <header id="mobil-header">
+            <div id="menu-hamburger">
+                <span class="line-hamburger"></span>
+                <span class="line-hamburger"></span>
+                <span class="line-hamburger"></span>
+            </div>
+            <h4><a href="?action=home">CASHALLO</a></h4>
+        </header>
+
+        <header id="tablet-and-desktop-header">
+            <a href="?action=home"><img src="assets/img/logo.png" alt="logo-cashallo" id="logo"></a>
+
+            <ul>
+                <li><a href="?action=partner">Partenaires</a></li>
+                <li><a href="?action=actualities">Actualités</a></li>
+                <li><a href="?action=contact">Contact</a></li>
+                {% if user.email is defined and user.email is not empty %}
+                    <li><a href="?action=profil">{{ user.prenom }}</a></li>
+                {% endif %}
+            </ul>
+            {% if user.email is not defined and user.email is empty %}
+                <h4><a href="?action=register">Inscription/Connection</a></h4>
+            {% endif %}
+            {% if user.email is defined and user.email is not empty %}
+                <h4><a href="?action=logout">Deconnection</a></h4>
+            {% endif %}
+        </header>
+        <div id="error">{{ error }}</div>
+        {% block content %}
+        {% endblock %}
+        <footer id="tablet-and-desktop-footer">
+            <div>
+                <img src="assets/img/logo.png" alt="logo-cashallo" id="logo">
+                <h4>CASHALLO</h4>
+            </div>
+
+            <ul id="nav-footer">
+                <li><a href="">A propos</a></li>
+                <li><a href="">Qui sommes nous</a></li>
+                <li><a href="">Engagement</a></li>
+            </ul>
+
+            <ul id="social-networks">
+                <li><a href=""><img src="assets/img/fb.png" alt="fb"></a></li>
+                <li><a href=""><img src="assets/img/insta.png" alt="insta"></a></li>
+                <li><a href=""><img src="assets/img/twitter.png" alt="twitter"></a></li>
+                <li><a href=""><img src="assets/img/pinterest.png" alt="pinterest"></a></li>
+            </ul>
+        </footer >
+    </div>
+</body>
+</html>
